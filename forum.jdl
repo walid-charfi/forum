@@ -22,7 +22,7 @@ application {
 
 entity Topic {
     titre String required minlength(5) maxlength(80)
-    description String
+    description TextBlob
 }
 
 entity Message {
@@ -32,7 +32,7 @@ entity Message {
 }
 
 relationship ManyToOne {
-    Message{topic} to Topic
+    Message{topic(titre)} to Topic
     Message{user(login)} to User
 }
 
@@ -40,4 +40,5 @@ relationship OneToMany {
     Message{reponses} to Message
 }
 
+dto * with mapstruct
 service Topic with serviceClass

@@ -7,7 +7,7 @@ export interface IMessage {
   subject?: string | null;
   content?: string | null;
   postDate?: dayjs.Dayjs | null;
-  topic?: Pick<ITopic, 'id'> | null;
+  topic?: Pick<ITopic, 'id' | 'titre'> | null;
   user?: Pick<IUser, 'id' | 'login'> | null;
   message?: Pick<IMessage, 'id'> | null;
 }

@@ -44,7 +44,7 @@
           <label class="form-label" jhiTranslate="forumApp.message.topic" for="field_topic">Topic</label>
           <select class="form-control" id="field_topic" data-cy="topic" name="topic" formControlName="topic" [compareWith]="compareTopic">
             <option [ngValue]="null"></option>
-            <option [ngValue]="topicOption" *ngFor="let topicOption of topicsSharedCollection">{{ topicOption.id }}</option>
+            <option [ngValue]="topicOption" *ngFor="let topicOption of topicsSharedCollection">{{ topicOption.titre }}</option>
           </select>
         </div>
 

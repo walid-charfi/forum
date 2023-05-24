@@ -1,7 +1,7 @@
 {
   "applications": ["forum"],
   "changelogDate": "20230524124617",
-  "dto": "no",
+  "dto": "mapstruct",
   "embedded": false,
   "entityTableName": "message",
   "fields": [
@@ -31,6 +31,7 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityField": "titre",
       "otherEntityName": "topic",
       "relationshipName": "topic",
       "relationshipType": "many-to-one"
@@ -48,5 +49,5 @@
       "relationshipType": "many-to-one"
     }
   ],
-  "service": "no"
+  "service": "serviceClass"
 }

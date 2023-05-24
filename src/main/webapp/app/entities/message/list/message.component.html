@@ -56,7 +56,7 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="topic.id">
+          <th scope="col" jhiSortBy="topic.titre">
             <div class="d-flex">
               <span jhiTranslate="forumApp.message.topic">Topic</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
@@ -92,7 +92,7 @@
           <td>{{ message.postDate | formatMediumDate }}</td>
           <td>
             <div *ngIf="message.topic">
-              <a [routerLink]="['/topic', message.topic.id, 'view']">{{ message.topic.id }}</a>
+              <a [routerLink]="['/topic', message.topic.id, 'view']">{{ message.topic.titre }}</a>
             </div>
           </td>
           <td>

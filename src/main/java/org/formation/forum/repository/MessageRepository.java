@@ -30,14 +30,14 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
     }
 
     @Query(
-        value = "select distinct message from Message message left join fetch message.user",
+        value = "select distinct message from Message message left join fetch message.topic left join fetch message.user",
         countQuery = "select count(distinct message) from Message message"
     )
     Page<Message> findAllWithToOneRelationships(Pageable pageable);
 
-    @Query("select distinct message from Message message left join fetch message.user")
+    @Query("select distinct message from Message message left join fetch message.topic left join fetch message.user")
     List<Message> findAllWithToOneRelationships();
 
-    @Query("select message from Message message left join fetch message.user where message.id =:id")
+    @Query("select message from Message message left join fetch message.topic left join fetch message.user where message.id =:id")
     Optional<Message> findOneWithToOneRelationships(@Param("id") Long id);
 }
