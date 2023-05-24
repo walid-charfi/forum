@@ -1,6 +1,9 @@
 {
+  "applications": ["forum"],
   "changelogDate": "20230524095625",
   "dto": "no",
+  "embedded": false,
+  "entityTableName": "topic",
   "fields": [
     {
       "fieldName": "titre",
@@ -14,6 +17,7 @@
       "fieldType": "String"
     }
   ],
+  "fluentMethods": true,
   "jpaMetamodelFiltering": false,
   "name": "Topic",
   "pagination": "pagination",

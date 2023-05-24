@@ -1,0 +1,52 @@
+{
+  "applications": ["forum"],
+  "changelogDate": "20230524124617",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "message",
+  "fields": [
+    {
+      "fieldName": "subject",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Message",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "message",
+      "otherEntityRelationshipName": "message",
+      "relationshipName": "reponses",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "topic",
+      "relationshipName": "topic",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "message",
+      "otherEntityRelationshipName": "reponses",
+      "relationshipName": "message",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,43 @@
+application {
+    config {
+        baseName forum
+        packageName org.formation.forum
+        applicationType monolith
+        databaseType sql
+        prodDatabaseType postgresql
+        devDatabaseType h2Memory
+        clientFramework angular
+        authenticationType jwt
+        nativeLanguage fr
+        languages [fr,en]
+        enableTranslation true
+        testFrameworks [cucumber,cypress]
+    }
+
+    entities *
+
+    paginate Topic with pagination
+    paginate Message with infinite-scroll
+}
+
+entity Topic {
+    titre String required minlength(5) maxlength(80)
+    description String
+}
+
+entity Message {
+    subject String
+    content String
+    postDate LocalDate
+}
+
+relationship ManyToOne {
+    Message{topic} to Topic
+    Message{user(login)} to User
+}
+
+relationship OneToMany {
+    Message{reponses} to Message
+}
+
+service Topic with serviceClass
